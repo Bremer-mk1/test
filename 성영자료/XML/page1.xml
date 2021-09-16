@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".page1">
 
+    //이미지 버튼 테스트 해본거임
+    //android:src="@drawable/ttest" <- 이부분에 대충 아무 그림파일 넣어서 테스트해보면됨
     <ImageButton
         android:id="@+id/imageButton1"
         android:layout_width="162dp"
@@ -16,6 +18,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+     //이미지 버튼 테스트 해본거임
+    //android:background="@drawable/ttest" <- 이부분에 대충 아무 그림파일 넣어서 테스트해보면됨
+                                              
     <Button
         android:id="@+id/button2"
         android:layout_width="176dp"
