@@ -13,6 +13,8 @@ public class page1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page1);
 
+        //Handler는 심심해서 넣어본거임 3초뒤 실행되게 해놓음
+        //Handler 굳이 없어도 화면 이동 했을떄 무리없이 재생됬음
         Handler mHandler = new Handler();
         mHandler.postDelayed(new Runnable() {
             public void run() {
