@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dogandfox_bk1"
+    tools:context=".page1">
+
+    <TextView
+        android:id="@+id/dogfox_text1"
+        android:layout_width="323dp"
+        android:layout_height="75dp"
+        android:text="몇몇 개들은 사자의 가죽을 발견했고\n그들은 이빨로 맹렬히 그것을 찢기 시작했다."
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.318"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.855" />
+
+    <Button
+        android:id="@+id/next_btn"
+        android:layout_width="70dp"
+        android:layout_height="66dp"
+        android:background="@drawable/ic_nextpage"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/replay_btn"
+        android:layout_width="61dp"
+        android:layout_height="64dp"
+        android:background="@drawable/ic_replay"
+        android:text=""
+        app:layout_constraintEnd_toStartOf="@+id/next_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/dog_p1_btn"
+        android:layout_width="63dp"
+        android:layout_height="56dp"
+        android:background="@drawable/dog_ic"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dogfox_text1"
+        app:layout_constraintVertical_bias="0.468" />
+
+    <Button
+        android:id="@+id/eng_chg_btn"
+        android:layout_width="65dp"
+        android:layout_height="59dp"
+        android:background="@drawable/ic_eng_chg"
+        android:text=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
