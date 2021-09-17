@@ -19,6 +19,9 @@ public class page1 extends AppCompatActivity {
     private Button next_btn;
     private Button eng_chg_btn;
     private int eng_chk=0;
+    private int m_position;
+    private MediaPlayer mediaPlayer;
+    private int m_chk = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +48,9 @@ public class page1 extends AppCompatActivity {
         //리플레이
         replay_btn= findViewById(R.id.replay_btn);
         replay_btn.setOnClickListener(new View.OnClickListener() {
-
-//        replay_btn.setOnClickListener(new OnSingleClickListener() {
-        @Override
-        public void onClick(View view){
-//            public void onSingleClick(View view) {
-                start_main_sound();
+            @Override
+            public void onClick(View view){
+                replay_sound();
             }
         });
 
@@ -99,37 +99,42 @@ public class page1 extends AppCompatActivity {
     }
 
     private void start_main_sound(){
-        MediaPlayer mediaPlayer;
         mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox1);
         mediaPlayer.start();
+        m_chk = 1;
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
-            public void onCompletion(MediaPlayer mp)
+            public void onCompletion(MediaPlayer mediaPlayer)
             {
-                mp.stop();
-                mp.release();
+                destroy_sound();
             }
         });
-
     }
 
-
-    private void start_replay_sound(){
-
-        SoundPool soundPool;
-        int soundID;
-        soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC,0);	//작성
-        soundID = soundPool.load(this,R.raw.dogandfox1,1);
-
-        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
-            @Override
-            public void onLoadComplete(SoundPool soundPool, int id, int status) {
-                if(status == 0){
-                    soundPool.play(id,1f,1f,0,0,1f);
+    private void replay_sound(){
+        if(m_chk == 0) {
+            start_main_sound();
+        }else if(m_chk == 1){
+            mediaPlayer.pause();
+            m_position = mediaPlayer.getCurrentPosition();
+            m_chk = 2;
+        }else{
+            mediaPlayer.seekTo(m_position);
+            mediaPlayer.start();
+            m_chk = 1;
+            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    destroy_sound();
                 }
-            }
-        });
+            });
+        }
+    }
 
+    private void destroy_sound(){
+        mediaPlayer.stop();
+        mediaPlayer.release();
+        m_chk = 0;
     }
 
 }
