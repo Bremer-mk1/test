@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">DogsAndFox</string>
+    <string name="dogandfox_p1_kor">몇몇 개들은 사자의 가죽을 발견했고\n그들은 이빨로 맹렬히 그것을 찢기 시작했다.</string>
+    <string name="dogandfox_p1_eng">Some Dogs found the skin of a lion \n and furiously began to tear it with their teeth.</string>
+    <string name="dogandfox_p2_kor">여우 한 마리가 그들을 우연히 보고 경멸하듯 웃었다.</string>
+    <string name="dogandfox_p2_eng">A fox chanced to see them and laughed scornfully.</string>
+    <string name="dogandfox_p3_kor">여우가 말했다\n \"만약 그 사자가 살아있었다면,
+        \n사자는 그의 발톱이 너희의 이빨보다 얼마나 더 날카로운지 \n느끼게 해줬을 거다.\"</string>
+    <string name="dogandfox_p3_eng">\"If that Lion had been alive, \" \n he said,\n \"it would have been a very different story.
+        \n He would have made you feel \n how much sharper his claws are than your teeth.\"</string>
+    <string name="dogandfox_p4_kor">쓰러져 있는 사람을 발로 차는 것은 쉬우면서도 경멸할 만한 일이다.</string>
+    <string name="dogandfox_p4_eng">It\'s easy and also contemptible to kick a man that is down.</string>
+</resources>
