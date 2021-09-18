@@ -12,9 +12,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class page1 extends AppCompatActivity {
+public class page3 extends AppCompatActivity {
 
-    private Button dog_btn;
+    private Button fox_btn;
+    private Button lion_btn;
     private Button replay_btn;
     private Button next_btn;
     private Button eng_chg_btn;
@@ -26,7 +27,7 @@ public class page1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.page1);
+        setContentView(R.layout.page3);
 
         Handler mHandler = new Handler();
         mHandler.postDelayed(new Runnable() {
@@ -40,7 +41,7 @@ public class page1 extends AppCompatActivity {
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(page1.this,page2.class);
+                Intent intent = new Intent(page3.this,page2.class);
                 startActivity(intent);
             }
         });
@@ -54,12 +55,21 @@ public class page1 extends AppCompatActivity {
             }
         });
 
-        //개소리
-        dog_btn= findViewById(R.id.dog_p1_btn);
-        dog_btn.setOnClickListener(new View.OnClickListener() {
+        //여우소리
+        fox_btn= findViewById(R.id.fox_p3_btn);
+        fox_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                start_dog_sound();
+                start_fox_sound();
+            }
+        });
+
+        //사자소리
+        lion_btn= findViewById(R.id.lion_p3_btn);
+        lion_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start_lion_sound();
             }
         });
 
@@ -68,23 +78,39 @@ public class page1 extends AppCompatActivity {
         eng_chg_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView text_p1 = findViewById(R.id.dogfox_text1);
+                TextView text_p3 = findViewById(R.id.dogfox_text3);
                 if(eng_chk == 1){
-                    text_p1.setText(getString(R.string.dogandfox_p1_kor));
+                    text_p3.setText(getString(R.string.dogandfox_p3_kor));
                     eng_chk = 0;
                 }else{
-                    text_p1.setText(getString(R.string.dogandfox_p1_eng));
+                    text_p3.setText(getString(R.string.dogandfox_p3_eng));
                     eng_chk = 1;
                 }
             }
         });
     }
 
-    private  void start_dog_sound(){
+    private  void start_fox_sound(){
         SoundPool soundPool;
         int soundID;
         soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC,0);	//작성
-        soundID = soundPool.load(this,R.raw.dogs,1);
+        soundID = soundPool.load(this,R.raw.sound_fox,1);
+
+        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+            @Override
+            public void onLoadComplete(SoundPool soundPool, int id, int status) {
+                if(status == 0){
+                    soundPool.play(id,1f,1f,0,0,1f);
+                }
+            }
+        });
+    }
+
+    private  void start_lion_sound(){
+        SoundPool soundPool;
+        int soundID;
+        soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC,0);	//작성
+        soundID = soundPool.load(this,R.raw.sound_lion,1);
 
         soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
             @Override
@@ -97,7 +123,7 @@ public class page1 extends AppCompatActivity {
     }
 
     private void start_main_sound(){
-        mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox1);
+        mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox3);
         mediaPlayer.start();
         m_chk = 1;
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {

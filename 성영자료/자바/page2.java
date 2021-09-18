@@ -1,5 +1,7 @@
 package com.book.dogsandfox;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -9,8 +11,6 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class page2 extends AppCompatActivity {
 
@@ -40,7 +40,7 @@ public class page2 extends AppCompatActivity {
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(page2.this,page1.class);
+                Intent intent = new Intent(page2.this,page3.class);
                 startActivity(intent);
             }
         });
@@ -70,10 +70,10 @@ public class page2 extends AppCompatActivity {
             public void onClick(View view) {
                 TextView text_p2 = findViewById(R.id.dogfox_text2);
                 if(eng_chk == 1){
-                    text_p2.setText("여우 한 마리가 그들을 우연히 보고 경멸하듯 웃었다.");
+                    text_p2.setText(getString(R.string.dogandfox_p2_kor));
                     eng_chk = 0;
                 }else{
-                    text_p2.setText("A fox chanced to see them and laughed scornfully.");
+                    text_p2.setText(getString(R.string.dogandfox_p2_eng));
                     eng_chk = 1;
                 }
             }
