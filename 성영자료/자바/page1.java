@@ -17,6 +17,7 @@ public class page1 extends AppCompatActivity {
     private Button dog_btn;
     private Button replay_btn;
     private Button next_btn;
+    private Button back_btn;
     private Button eng_chg_btn;
     private int eng_chk=0;
     private int m_position;
@@ -40,7 +41,23 @@ public class page1 extends AppCompatActivity {
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(m_chk != 0){
+                    destroy_sound();
+                }
                 Intent intent = new Intent(page1.this,page2.class);
+                startActivity(intent);
+            }
+        });
+
+        //이전 페이지로
+        back_btn= findViewById(R.id.back_btn);
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(m_chk != 0) {
+                    destroy_sound();
+                }
+                Intent intent = new Intent(page1.this,main_list.class);
                 startActivity(intent);
             }
         });
@@ -98,7 +115,12 @@ public class page1 extends AppCompatActivity {
 
     private void start_main_sound(){
         mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox1);
-        mediaPlayer.start();
+        mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mediaPlayer) {
+                mediaPlayer.start();
+            }
+        });
         m_chk = 1;
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -130,7 +152,9 @@ public class page1 extends AppCompatActivity {
     }
 
     private void destroy_sound(){
-        mediaPlayer.stop();
+        if(m_chk != 0){
+            mediaPlayer.stop();
+        }
         mediaPlayer.release();
         m_chk = 0;
     }

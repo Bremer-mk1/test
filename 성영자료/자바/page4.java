@@ -1,5 +1,7 @@
 package com.book.dogsandfox;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -7,8 +9,6 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class page4 extends AppCompatActivity {
 
@@ -38,6 +38,9 @@ public class page4 extends AppCompatActivity {
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(m_chk != 0){
+                    destroy_sound();
+                }
                 Intent intent = new Intent(page4.this,main_list.class);
                 startActivity(intent);
             }
@@ -48,7 +51,10 @@ public class page4 extends AppCompatActivity {
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(page4.this,page2.class);
+                if(m_chk != 0){
+                    destroy_sound();
+                }
+                Intent intent = new Intent(page4.this,page3.class);
                 startActivity(intent);
             }
         });
@@ -62,7 +68,6 @@ public class page4 extends AppCompatActivity {
             }
         });
 
-
         //영어 텍스트 변환
         eng_chg_btn= findViewById(R.id.eng_chg_btn);
         eng_chg_btn.setOnClickListener(new View.OnClickListener() {
@@ -70,10 +75,10 @@ public class page4 extends AppCompatActivity {
             public void onClick(View view) {
                 TextView text_p4 = findViewById(R.id.dogfox_text4);
                 if(eng_chk == 1){
-                    text_p4.setText("쓰러져 있는 사람을 발로 차는 것은 쉬우면서도 경멸할 만한 일이다.");
+                    text_p4.setText(getString(R.string.dogandfox_p4_kor));
                     eng_chk = 0;
                 }else{
-                    text_p4.setText("It's easy and also contemptible to kick a man that is down.");
+                    text_p4.setText(getString(R.string.dogandfox_p4_eng));
                     eng_chk = 1;
                 }
             }
@@ -82,7 +87,12 @@ public class page4 extends AppCompatActivity {
 
     private void start_main_sound(){
         mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox4);
-        mediaPlayer.start();
+        mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mediaPlayer) {
+                mediaPlayer.start();
+            }
+        });
         m_chk = 1;
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -114,7 +124,9 @@ public class page4 extends AppCompatActivity {
     }
 
     private void destroy_sound(){
-        mediaPlayer.stop();
+        if(m_chk != 0){
+            mediaPlayer.stop();
+        }
         mediaPlayer.release();
         m_chk = 0;
     }
