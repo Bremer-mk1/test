@@ -41,7 +41,7 @@ public class page4 extends AppCompatActivity {
                 if(m_chk != 0){
                     destroy_sound();
                 }
-                Intent intent = new Intent(page4.this,main_list.class);
+                Intent intent = new Intent(page4.this,page5.class);
                 startActivity(intent);
             }
         });
