@@ -86,11 +86,14 @@ public class page1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 TextView text_p1 = findViewById(R.id.dogfox_text1);
+                TextView head = findViewById(R.id.title);
                 if(eng_chk == 1){
                     text_p1.setText(getString(R.string.dogandfox_p1_kor));
+                    head.setText(getString(R.string.title_kor));
                     eng_chk = 0;
                 }else{
                     text_p1.setText(getString(R.string.dogandfox_p1_eng));
+                    head.setText(getString(R.string.title_eng));
                     eng_chk = 1;
                 }
             }
