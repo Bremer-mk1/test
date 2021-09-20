@@ -23,7 +23,7 @@
         android:layout_width="163dp"
         android:layout_height="45dp"
         android:layout_marginTop="28dp"
-        android:text="개와 여우"
+        android:text="@string/dogandfox_head_kor"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

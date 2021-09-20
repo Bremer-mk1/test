@@ -56,8 +56,17 @@
     <Button
         android:id="@+id/eng_chg_btn"
         android:layout_width="65dp"
-        android:layout_height="59dp"
+        android:layout_height="65dp"
         android:background="@drawable/ic_eng_chg"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/back_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/back_btn"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="@drawable/ic_backpage"
         android:text=""
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

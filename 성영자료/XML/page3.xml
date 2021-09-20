@@ -46,12 +46,12 @@
         android:layout_width="63dp"
         android:layout_height="56dp"
         android:layout_marginStart="104dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="80dp"
         android:background="@drawable/fox_ic"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/lion_p3_btn"
-        app:layout_constraintHorizontal_bias="0.276"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dogfox_text2"
         app:layout_constraintVertical_bias="0.468" />
@@ -72,8 +72,17 @@
     <Button
         android:id="@+id/eng_chg_btn"
         android:layout_width="65dp"
-        android:layout_height="59dp"
+        android:layout_height="65dp"
         android:background="@drawable/ic_eng_chg"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/back_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/back_btn"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="@drawable/ic_backpage"
         android:text=""
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
