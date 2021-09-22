@@ -1,13 +1,13 @@
-Androidmanifest 파일
-1.
+1.Androidmanifest 파일
+1.1
 manifest태그 아래에 추가
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-2.    
+1.2    
   application태그아래에 추가
         <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3576011653939652~8502683380"/>
             
-3.build.gradle(Module.app)
-dependencies 안에 추가
+2.build.gradle(Module.app) 파일
+2.1dependencies 안에 추가
    implementation 'com.google.android.gms:play-services-ads:20.3.0'
