@@ -4,24 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/moral"
-    tools:context=".page4">
+    tools:context=".page5">
 
-    <TextView
-        android:id="@+id/dogfox_text4"
-        android:layout_width="355dp"
-        android:layout_height="158dp"
+    <ListView
+        android:id="@+id/dogfox_eng_word"
+        android:layout_width="194dp"
+        android:layout_height="605dp"
         android:text="@string/dogandfox_p4_kor"
-        android:textAlignment="center"
+        android:gravity="left"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_btn"
+        app:layout_constraintVertical_bias="0.462" />
+
+    <ListView
+        android:id="@+id/dogfox_kor_word"
+        android:layout_width="186dp"
+        android:layout_height="608dp"
+        android:gravity="right"
         android:textColor="#000000"
         android:textColorHint="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.539" />
+        app:layout_constraintTop_toBottomOf="@+id/next_btn" />
 
     <Button
         android:id="@+id/next_btn"
@@ -30,24 +41,6 @@
         android:background="@drawable/ic_nextpage"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/replay_btn"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:background="@drawable/ic_replay"
-        android:text=""
-        app:layout_constraintEnd_toStartOf="@+id/next_btn"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/eng_chg_btn"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:background="@drawable/ic_eng_chg"
-        android:text=""
-        app:layout_constraintStart_toEndOf="@+id/back_btn"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button

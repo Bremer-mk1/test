@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">DogsAndFox</string>
+    <string name="dogandfox_head_kor">개들과 여우</string>
+    <string name="dogandfox_head_eng">Dogs and Fox</string>
     <string name="dogandfox_p1_kor">몇몇 개들은 사자의 가죽을 발견했고\n그들은 이빨로 맹렬히 그것을 찢기 시작했다.</string>
     <string name="dogandfox_p1_eng">Some Dogs found the skin of a lion \n and furiously began to tear it with their teeth.</string>
     <string name="dogandfox_p2_kor">여우 한 마리가 그들을 우연히 보고 경멸하듯 웃었다.</string>
@@ -8,6 +10,29 @@
         \n사자는 그의 발톱이 너희의 이빨보다 얼마나 더 날카로운지 \n느끼게 해줬을 거다.\"</string>
     <string name="dogandfox_p3_eng">\"If that Lion had been alive, \" \n he said,\n \"it would have been a very different story.
         \n He would have made you feel \n how much sharper his claws are than your teeth.\"</string>
-    <string name="dogandfox_p4_kor">쓰러져 있는 사람을 발로 차는 것은 \n쉬우면서도 경멸할 만한 일이다.</string>
-    <string name="dogandfox_p4_eng">It\'s easy and also contemptible to kick a man that is down.</string>
+    <string name="dogandfox_p4_kor">쓰러져 있는 사람을 발로 차는 것은\n 쉬우면서도 경멸할 만한 일이다.</string>
+    <string name="dogandfox_p4_eng">It\'s easy and also contemptible to kick a man \n that is down.</string>
+
+    <string-array name="dogandfox_eng_word">
+        <item>dog</item>
+        <item>fox</item>
+        <item>lion</item>
+    </string-array>
+    <string-array name="dogandfox_kor_word">
+        <item>개</item>
+        <item>여우</item>
+        <item>사자</item>
+    </string-array>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="interstitial_ad_sample">Interstitial Ad Sample</string>
+    <string name="start_level">Level 1</string>
+    <string name="next_level">Next Level</string>
+    <!-- -
+        This is an ad unit ID for an interstitial test ad. Replace with your own interstitial ad unit id.
+        For more information, see https://support.google.com/admob/answer/3052638
+    <!- -->
+    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
 </resources>
