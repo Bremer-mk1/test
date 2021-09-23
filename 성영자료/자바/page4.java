@@ -86,7 +86,11 @@ public class page4 extends AppCompatActivity {
     }
 
     private void start_main_sound(){
-        mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox4);
+        if(eng_chk == 0){
+            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox4);
+        }else{
+            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox4_eng);
+        }
         mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mediaPlayer) {

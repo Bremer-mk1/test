@@ -117,7 +117,11 @@ public class page1 extends AppCompatActivity {
     }
 
     private void start_main_sound(){
-        mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox1);
+        if(eng_chk == 0){
+            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox1);
+        }else{
+            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox1_eng);
+        }
         mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mediaPlayer) {
