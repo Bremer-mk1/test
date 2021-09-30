@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class page4 extends AppCompatActivity {
+public class Catmonkey_page1 extends AppCompatActivity {
 
     private Button replay_btn;
     private Button next_btn;
@@ -24,8 +24,7 @@ public class page4 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.page4);
-
+        setContentView(R.layout.catmonkey_page1);
         Handler mHandler = new Handler();
         mHandler.postDelayed(new Runnable() {
             public void run() {
@@ -47,8 +46,7 @@ public class page4 extends AppCompatActivity {
                 if(m_chk != 0){
                     destroy_sound();
                 }
-                Intent intent = new Intent(page4.this,loading_word.class);
-                intent.putExtra("title_num",1);
+                Intent intent = new Intent(Catmonkey_page1.this,Catmonkey_page2.class);
                 startActivity(intent);
                 finish();
             }
@@ -65,10 +63,10 @@ public class page4 extends AppCompatActivity {
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(m_chk != 0){
+                if(m_chk != 0) {
                     destroy_sound();
                 }
-                Intent intent = new Intent(page4.this,page3.class);
+                Intent intent = new Intent(Catmonkey_page1.this,main_list.class);
                 startActivity(intent);
                 finish();
             }
@@ -88,12 +86,15 @@ public class page4 extends AppCompatActivity {
         eng_chg_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView text_p4 = findViewById(R.id.dogfox_text4);
+                TextView text_p1 = findViewById(R.id.catmonkey_text1);
+                TextView head = findViewById(R.id.title);
                 if(eng_chk == 1){
-                    text_p4.setText(getString(R.string.dogandfox_p4_kor));
+                    text_p1.setText(getString(R.string.catmonkey_p1_kor));
+                    head.setText(getString(R.string.catmonkey_head_kor));
                     eng_chk = 0;
                 }else{
-                    text_p4.setText(getString(R.string.dogandfox_p4_eng));
+                    text_p1.setText(getString(R.string.catmonkey_p1_eng));
+                    head.setText(getString(R.string.catmonkey_head_eng));
                     eng_chk = 1;
                 }
             }
@@ -102,9 +103,9 @@ public class page4 extends AppCompatActivity {
 
     private void start_main_sound(){
         if(eng_chk == 0){
-            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox4);
+            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.catmonkey1);
         }else{
-            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox4_eng);
+            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.catmonkey1_eng);
         }
         mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -149,5 +150,4 @@ public class page4 extends AppCompatActivity {
         mediaPlayer.release();
         m_chk = 0;
     }
-
 }

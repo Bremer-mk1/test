@@ -38,6 +38,12 @@ public class page2 extends AppCompatActivity {
 
         //다음 페이지로
         next_btn= findViewById(R.id.next_btn);
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                next_btn.setVisibility(View.VISIBLE);
+            }
+        },1300);
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,11 +52,18 @@ public class page2 extends AppCompatActivity {
                 }
                 Intent intent = new Intent(page2.this,page3.class);
                 startActivity(intent);
+                finish();
             }
         });
 
         //이전 페이지로
         back_btn= findViewById(R.id.back_btn);
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                back_btn.setVisibility(View.VISIBLE);
+            }
+        },1300);
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,6 +72,7 @@ public class page2 extends AppCompatActivity {
                 }
                 Intent intent = new Intent(page2.this,page1.class);
                 startActivity(intent);
+                finish();
             }
         });
 

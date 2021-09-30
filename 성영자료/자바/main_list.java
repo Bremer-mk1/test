@@ -10,6 +10,9 @@ import android.widget.Button;
 public class main_list extends AppCompatActivity {
 
     private Button dogAndFox;
+    private Button catmonkey;
+    private Button finish_btn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,25 @@ public class main_list extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(main_list.this,page1.class);
                 startActivity(intent);
+                finish();
+            }
+        });
+
+        catmonkey = findViewById(R.id.catmonkey);
+        catmonkey.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(main_list.this,Catmonkey_page1.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        finish_btn = findViewById(R.id.finish_btn);
+        finish_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }
