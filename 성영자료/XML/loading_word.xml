@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".loading_word">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="240dp"
         android:layout_height="86dp"
-        android:text="우화모음"
+        android:text="공부하고 가요"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="36sp"
@@ -27,7 +27,7 @@
         android:layout_width="282dp"
         android:layout_height="41dp"
         android:layout_marginBottom="340dp"
-        android:text="동물들 불러오는 중.."
+        android:text="영단어 불러오는 중.."
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -35,5 +35,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

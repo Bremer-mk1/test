@@ -4,29 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dogandfox_bk3"
-    tools:context=".page3">
+    android:background="@drawable/moral"
+    tools:context=".Catmonkey_page10">
 
     <TextView
-        android:id="@+id/dogfox_text3"
-        android:layout_width="245dp"
-        android:layout_height="171dp"
-        android:text="@string/dogandfox_p3_kor"
+        android:id="@+id/catmonkey_text10"
+        android:layout_width="match_parent"
+        android:layout_height="158dp"
+        android:text="@string/catmonkey_p10_kor"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textColorHint="#000000"
-        android:textSize="18sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.596" />
+        app:layout_constraintVertical_bias="0.539" />
 
     <Button
         android:id="@+id/next_btn"
-        android:layout_width="70dp"
-        android:layout_height="66dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:background="@drawable/ic_nextpage"
         android:text=""
         android:visibility="invisible"
@@ -35,40 +35,12 @@
 
     <Button
         android:id="@+id/replay_btn"
-        android:layout_width="61dp"
-        android:layout_height="64dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:background="@drawable/ic_replay"
         android:text=""
         app:layout_constraintEnd_toStartOf="@+id/next_btn"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/fox_p3_btn"
-        android:layout_width="63dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginBottom="80dp"
-        android:background="@drawable/fox_ic"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/lion_p3_btn"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dogfox_text2"
-        app:layout_constraintVertical_bias="0.468" />
-
-    <Button
-        android:id="@+id/lion_p3_btn"
-        android:layout_width="63dp"
-        android:layout_height="56dp"
-        android:layout_marginEnd="116dp"
-        android:layout_marginBottom="48dp"
-        android:background="@drawable/lion_ic"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dogfox_text3"
-        app:layout_constraintVertical_bias="0.655" />
 
     <Button
         android:id="@+id/eng_chg_btn"
