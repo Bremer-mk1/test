@@ -1,15 +1,22 @@
-package com.book.dogsandfox;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.book.main;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.book.dogsandfox.page1;
+import com.book.monkeyandcat.Catmonkey_page1;
+
+
 public class main_list extends AppCompatActivity {
 
     private Button dogAndFox;
+    private Button catmonkey;
+    private Button finish_btn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +29,25 @@ public class main_list extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(main_list.this,page1.class);
                 startActivity(intent);
+                finish();
+            }
+        });
+
+        catmonkey = findViewById(R.id.catmonkey);
+        catmonkey.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(main_list.this, Catmonkey_page1.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        finish_btn = findViewById(R.id.finish_btn);
+        finish_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

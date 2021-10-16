@@ -11,6 +11,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import com.book.main.R;
 
 public class page2 extends AppCompatActivity {
 
@@ -38,6 +39,12 @@ public class page2 extends AppCompatActivity {
 
         //다음 페이지로
         next_btn= findViewById(R.id.next_btn);
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                next_btn.setVisibility(View.VISIBLE);
+            }
+        },1300);
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,11 +53,18 @@ public class page2 extends AppCompatActivity {
                 }
                 Intent intent = new Intent(page2.this,page3.class);
                 startActivity(intent);
+                finish();
             }
         });
 
         //이전 페이지로
         back_btn= findViewById(R.id.back_btn);
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                back_btn.setVisibility(View.VISIBLE);
+            }
+        },1300);
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,6 +73,7 @@ public class page2 extends AppCompatActivity {
                 }
                 Intent intent = new Intent(page2.this,page1.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -114,7 +129,11 @@ public class page2 extends AppCompatActivity {
     }
 
     private void start_main_sound(){
-        mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox2);
+        if(eng_chk == 0){
+            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox2);
+        }else{
+            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox2_eng);
+        }
         mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mediaPlayer) {

@@ -1,23 +1,20 @@
-package com.book.dogsandfox;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.book.monkeyandcat;
 
 import android.content.Intent;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.book.main.R;
+import com.book.main.loading_word;
 
-public class page3 extends AppCompatActivity {
+public class Catmonkey_page10 extends AppCompatActivity {
 
-    private Button fox_btn;
-    private Button lion_btn;
     private Button replay_btn;
     private Button next_btn;
     private Button back_btn;
@@ -27,10 +24,11 @@ public class page3 extends AppCompatActivity {
     private MediaPlayer mediaPlayer;
     private int m_chk = 0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.page3);
+        setContentView(R.layout.catmonkey_page10);
 
         Handler mHandler = new Handler();
         mHandler.postDelayed(new Runnable() {
@@ -53,7 +51,8 @@ public class page3 extends AppCompatActivity {
                 if(m_chk != 0){
                     destroy_sound();
                 }
-                Intent intent = new Intent(page3.this,page4.class);
+                Intent intent = new Intent(Catmonkey_page10.this, loading_word.class);
+                intent.putExtra("title_num",2);
                 startActivity(intent);
                 finish();
             }
@@ -73,7 +72,7 @@ public class page3 extends AppCompatActivity {
                 if(m_chk != 0){
                     destroy_sound();
                 }
-                Intent intent = new Intent(page3.this,page2.class);
+                Intent intent = new Intent(Catmonkey_page10.this,Catmonkey_page9.class);
                 startActivity(intent);
                 finish();
             }
@@ -88,68 +87,18 @@ public class page3 extends AppCompatActivity {
             }
         });
 
-        //여우소리
-        fox_btn= findViewById(R.id.fox_p3_btn);
-        fox_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                start_fox_sound();
-            }
-        });
-
-        //사자소리
-        lion_btn= findViewById(R.id.lion_p3_btn);
-        lion_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                start_lion_sound();
-            }
-        });
-
         //영어 텍스트 변환
         eng_chg_btn= findViewById(R.id.eng_chg_btn);
         eng_chg_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView text_p3 = findViewById(R.id.dogfox_text3);
+                TextView text_p4 = findViewById(R.id.catmonkey_text10);
                 if(eng_chk == 1){
-                    text_p3.setText(getString(R.string.dogandfox_p3_kor));
+                    text_p4.setText(getString(R.string.catmonkey_p10_kor));
                     eng_chk = 0;
                 }else{
-                    text_p3.setText(getString(R.string.dogandfox_p3_eng));
+                    text_p4.setText(getString(R.string.catmonkey_p10_eng));
                     eng_chk = 1;
-                }
-            }
-        });
-    }
-
-    private  void start_fox_sound(){
-        SoundPool soundPool;
-        int soundID;
-        soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC,0);	//작성
-        soundID = soundPool.load(this,R.raw.sound_fox,1);
-
-        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
-            @Override
-            public void onLoadComplete(SoundPool soundPool, int id, int status) {
-                if(status == 0){
-                    soundPool.play(id,1f,1f,0,0,1f);
-                }
-            }
-        });
-    }
-
-    private  void start_lion_sound(){
-        SoundPool soundPool;
-        int soundID;
-        soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC,0);	//작성
-        soundID = soundPool.load(this,R.raw.sound_lion,1);
-
-        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
-            @Override
-            public void onLoadComplete(SoundPool soundPool, int id, int status) {
-                if(status == 0){
-                    soundPool.play(id,1f,1f,0,0,1f);
                 }
             }
         });
@@ -157,9 +106,9 @@ public class page3 extends AppCompatActivity {
 
     private void start_main_sound(){
         if(eng_chk == 0){
-            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox3);
+            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.catmonkey10);
         }else{
-            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox3_eng);
+            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.catmonkey10_eng);
         }
         mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -204,5 +153,4 @@ public class page3 extends AppCompatActivity {
         mediaPlayer.release();
         m_chk = 0;
     }
-
 }

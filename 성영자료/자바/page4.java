@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.book.main.R;
+import com.book.main.loading_word;
+
 public class page4 extends AppCompatActivity {
 
     private Button replay_btn;
@@ -35,19 +38,33 @@ public class page4 extends AppCompatActivity {
 
         //다음 페이지로
         next_btn= findViewById(R.id.next_btn);
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                next_btn.setVisibility(View.VISIBLE);
+            }
+        },1300);
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(m_chk != 0){
                     destroy_sound();
                 }
-                Intent intent = new Intent(page4.this,page5.class);
+                Intent intent = new Intent(page4.this, loading_word.class);
+                intent.putExtra("title_num",1);
                 startActivity(intent);
+                finish();
             }
         });
 
         //이전 페이지로
         back_btn= findViewById(R.id.back_btn);
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                back_btn.setVisibility(View.VISIBLE);
+            }
+        },1300);
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,6 +73,7 @@ public class page4 extends AppCompatActivity {
                 }
                 Intent intent = new Intent(page4.this,page3.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -86,7 +104,11 @@ public class page4 extends AppCompatActivity {
     }
 
     private void start_main_sound(){
-        mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox4);
+        if(eng_chk == 0){
+            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox4);
+        }else{
+            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.dogandfox4_eng);
+        }
         mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mediaPlayer) {
